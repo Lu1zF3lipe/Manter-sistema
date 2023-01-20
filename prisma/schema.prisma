@@ -1,0 +1,33 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model SystemData {
+  id         Int      @id @default(autoincrement())
+  email      String?   @unique
+  acronym    String
+  url        String
+  descrition String
+  crated_at  DateTime @default(now())
+
+  system_controls SystemControl[]
+}
+
+model SystemControl {
+  id             Int      @id @default(autoincrement())
+  status         String
+  editor_name    String
+  justification  String
+  system_data_id Int
+  crated_at      DateTime @default(now())
+
+  system_data SystemData @relation(fields: [system_data_id], references: [id])
+}
