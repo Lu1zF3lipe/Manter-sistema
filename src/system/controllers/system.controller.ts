@@ -16,11 +16,11 @@ import {
   ApiCreatedResponse,
   ApiResponse,
 } from '@nestjs/swagger';
-import { SystemService } from 'src/services/system.service';
+import { SystemService } from 'src/domain/services/system.service';
 import { createSystemDTO } from 'src/system/dto/create-system.dto';
 import { findFilterSystemDTO } from 'src/system/dto/find-filter-system.dto';
 import { updateSystemDTO } from 'src/system/dto/uptade-system.dto';
-import { SystemData } from 'src/system/system-data.models';
+import { SystemData } from 'src/infrastructure/system-data.models';
 
 @ApiTags('system')
 @Controller('system')

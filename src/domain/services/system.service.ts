@@ -1,5 +1,5 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import { SystemDataRepository } from 'src/repositories/system-data.repository';
+import { SystemDataRepository } from 'src/infrastructure/repositories/system-data.repository';
 import { createSystemDTO } from 'src/system/dto/create-system.dto';
 import { findFilterSystemDTO } from 'src/system/dto/find-filter-system.dto';
 import { updateSystemDTO } from 'src/system/dto/uptade-system.dto';

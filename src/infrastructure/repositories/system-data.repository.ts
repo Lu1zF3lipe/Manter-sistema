@@ -1,6 +1,6 @@
-import { PrismaService } from 'src/db';
+import { PrismaProvider } from 'src/infrastructure/database/prisma.providers';
 import { createSystemDTO } from 'src/system/dto/create-system.dto';
-import { SystemData } from 'src/system/system-data.models';
+import { SystemData } from 'src/infrastructure/system-data.models';
 import { findFilterSystemDTO } from 'src/system/dto/find-filter-system.dto';
 import { plainToInstance } from 'class-transformer';
 import { updateSystemDTO } from 'src/system/dto/uptade-system.dto';
@@ -8,7 +8,7 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class SystemDataRepository {
-  constructor(private prisma: PrismaService) {}
+  constructor(private prisma: PrismaProvider) {}
 
   async create({
     email,
